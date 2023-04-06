@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import {
   Container,
   Card,
@@ -17,7 +17,7 @@ const SavedBooks = () => {
   const { loading, data } = useQuery(GET_ME);
   let userData = data?.me || {};
   console.log(userData);
-  const [removeBook] = useMutation(REMOVE_BOOK);
+  const [removeBook, { error }] = useMutation(REMOVE_BOOK);
 
 
 
@@ -44,7 +44,7 @@ const SavedBooks = () => {
     };
 
   //pending data
-  if (!userDataLength) {
+  if (loading) {
     return <h2>LOADING...</h2>;
   }
 

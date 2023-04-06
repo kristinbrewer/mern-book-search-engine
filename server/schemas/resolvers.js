@@ -3,7 +3,7 @@ const { User } = require('../models');
 // import sign token function from auth
 const { signToken } = require('../utils/auth');
 const { AuthenticationError } = require('apollo-server-express');
-const userController = require('../controllers/user-controller');
+//const userController = require('../controllers/user-controller');
 
 const resolvers = {
     Query: {
